@@ -22,11 +22,11 @@ services:
         container_name: p1-api-mongo
         restart: always
         volumes:
-            - p1-api-mongo:/data/db
+            - p1-admin-mongo:/data/db
         ports:
             - "27017:27017"
 
 volumes:
-  p1-api-mongo:
+  p1-admin-mongo:
     external: true
 
