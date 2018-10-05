@@ -2,8 +2,6 @@ parameters:
   default_locale: en
   default_secret: "GznmUbujd!nj&@VyjujBkv8#@Lj"
 
-  routing.logout.target: "/"
-
   mongodb_server: "mongodb://p1-api-mongo:27017"
   mongodb_database: "test_database"
 
