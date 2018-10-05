@@ -1,0 +1,24 @@
+security:
+  providers:
+    in_memory:
+      memory: ~
+    jwt:
+      lexik_jwt:
+        class: Core\Security\JwtUser
+
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+
+    api:
+      pattern: ^/api
+      stateless: true
+      anonymous: true
+      guard:
+        authenticators:
+          - lexik_jwt_authentication.jwt_token_authenticator
+      provider: jwt
+
+  access_control:
+    - { path: ^/api, roles: [IS_AUTHENTICATED_FULLY, IS_AUTHENTICATED_ANONYMOUSLY] }

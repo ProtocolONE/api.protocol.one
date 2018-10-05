@@ -1,0 +1,93 @@
+sonata_media:
+    db_driver: doctrine_mongodb
+    default_context: default
+    contexts:
+        default:
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+                - sonata.media.provider.vimeo
+            formats:
+                small: { width: 100 , quality: 70}
+                big: { width: 500 , quality: 70}
+        game.icon48x48:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 48, quality: 48}
+                big: { width: 48, quality: 48}
+        game.avatar100x100:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 100, quality: 100}
+                big: { width: 100, quality: 100}
+        game.avatar300x200:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 150, quality: 100}
+                big: { width: 300, quality: 200}
+        game.avatar180x200:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 90, quality: 100}
+                big: { width: 180, quality: 200}
+        game.iconInApp:
+            providers:
+                - sonata.media.provider.file
+        gameUI.imageSmall:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 87, quality: 87}
+                big: { width: 87, quality: 87}
+        gameUI.imageHorizontalSmall:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 188, quality: 93}
+                big: { width: 188, quality: 93}
+        gameUI.imageLogoSmall:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 105, quality: 30}
+                big: { width: 209, quality: 60}
+        gameUI.imagePopupArt:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 119, quality: 154}
+                big: { width: 238, quality: 308}
+        gameUI.backgroundInApp:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 200, quality: 120}
+                big: { width: 1000, quality: 600}
+    cdn:
+        server:
+            path: 'http://s3.%s3_region%.amazonaws.com/%s3_bucket_name%'
+    providers:
+        image:
+            filesystem: sonata.media.filesystem.s3
+        file:
+            filesystem: sonata.media.filesystem.s3
+            allowed_extensions: ['ico']
+            allowed_mime_types: ['image/x-icon']
+
+    filesystem:
+        s3:
+            bucket: '%s3_bucket_name%'
+            accessKey: '%s3_access_key%'
+            secretKey: '%s3_secret_key%'
+            region: '%s3_region%'
+            version: '%s3_version%'
+            sdk_version: '%s3_sdk_version%'
+    class:
+        media: Application\Sonata\MediaBundle\Document\Media
+        gallery: Application\Sonata\MediaBundle\Document\Gallery

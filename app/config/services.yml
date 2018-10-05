@@ -1,0 +1,9 @@
+services:
+  manager.games:
+    class: Core\Manager\GamesManager
+    arguments: ["@doctrine_mongodb", "@document.helper.image_replacer"]
+
+  document.helper.image_replacer:
+    class: Core\Helper\ImageReplacer
+    arguments: ["@sonata.media.twig.extension"]
+
