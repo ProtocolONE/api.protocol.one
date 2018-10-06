@@ -23,8 +23,10 @@ services:
     p1-api-mongo:
         image: mongo:4.1.3
         container_name: p1-api-mongo
-        networks: 
-          - p1devnet
+        networks:
+          p1devnet:
+            aliases: 
+              - p1-admin-mongo
         restart: always
         volumes:
             - p1-admin-mongo:/data/db
