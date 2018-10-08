@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ProtocolONE/api.protocol.one.svg?branch=master)](https://travis-ci.org/ProtocolONE/api.protocol.one)
+
 ProtocolOne API
 ===============
 
