@@ -1,0 +1,19 @@
+env:
+  global:
+  - secure: Y0RhlIX+P84QxN2jVrRcp8S7R0BMzTnX5PMn3Lwv4l8QrHoAJ4sTIHy9dqLu8VJF82MIJGJuuK1gC1cvHWRHUGshB55hrSxGg99HRQYZk5C4p1FpDhRzJqKVFWsgb/G+I9W4PmmCbkIiUdAVqzgLiYL0xPg9Q4lU/+MiQ/n9IPYq1J+1UmAxEfCaUDsW8Gy65usk5qSKiMBpKM6y7TbvpJYRgOE0KgRG2WkwtOpBUXUNRAqZcijnNUgCAyqAnyiaE8iRagXw5dphswIoVPuMzUgLjdFKjh7kjKMo3tVZIoCEg0Rd1yoJamfW5/QGQCMDb2o5B8lVitMDenuc5UFeZQNc4RaZ8/MqvaoLiyyPxTixfIy+PBslbcvSp9aROTiWV0q0AnZO07yNxE6GLiHbA005xwRi+jrYQjE3tzVPgMkF68S2pEfvuuIBbQoDbAic1oGWrkE4U0ZzLr3+JrhvV3ILD7TwHK8rfA7dy+YX0NO6DVDbGSroQKMjVONSA9RMd+GlTRVR4hO8OdlN27CYcZ5HKouAIQs9r12yBiLMS4DFZNwOJjCpBWWYEz04HfYcW8Vz7Y41aGp+L1KQVwCHRckDm5rBQtHu1Rc/BpBd0mftYyrr2G6NgfQgkUViZtyZXgzDimYhN+Su1O0CR/+bFX/e//DqnQNI1pqbuBOBF3I=
+  - secure: L1fRdramcrRxmX9T6rce5Rp+t1r3gVLb6XkGqCo+/xly6oZr+H2DVRZQDMq5TyEQx0B7+vmu4WlRNiKwLGKS7gCxZ0bRzMetw0FXD7xgA+qo4MRlWmBQ7qnDEpzAP3G1+OnKVPiqn+uihqSuyUSmv6T2PT1ooI0dBdbiOUtpj4B6v0mVIq5jU9IX7wM5AlVjgMBXbCJ05k5b9o4Qsac6xheGq8ZtbKuYS7aCyRAUsPz0tDmQLPla/ShHfid3RnstKxLlCxHGTrAsaOc2WPE0nXNAxx02pEJjLGgGnhihL8FJAJolnhDUC4PKy9gv3J5fvr3t3hNVmKIVkZd1qAz44O1O0jQUrQhPnvGcPGLwcw5yFBr98wx9+YzlkajFIsr/QGThahjaozpwGeKBdCrw6wXtBJsKbVG0GMXvwuXl/0Mxxs9VUfJH1V7XJvoecUKyOTNYywdNiipfhCD+V07g1wmfmBzLlK4DMgEwgKRdDBVm/z1+wTIpmJuRK8delBSfIlsZ0EbSi/gQ+mKmWJVTKQpjZZwKnZfGdOJqG41Hp9lJ1uWI2zdAdJCIOK5H0ZMXX7/Y1+Nn/A1TojyGAAFsk4id0vuydrjaP278wyl5rDqpcHYIDcgM2bVuN2CAm2ehzRoxh+3Wj573PAAVlLtCXwEUF6hE06wYy243g0JhDI0=
+  - REPO=p1hub/api.protocol.one
+sudo: true
+services:
+- docker
+jobs:
+  include:
+  - stage: Building image with api.protocol.one
+    script:
+    - export TAG=`if [[ $TRAVIS_BRANCH == "master" ]]; then echo "latest"; else echo
+      $TRAVIS_TAG; fi`
+    - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+    - docker build -t $REPO:$TAG .
+    - docker push $REPO
+notifications:
+  email: false
