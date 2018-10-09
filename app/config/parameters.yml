@@ -3,7 +3,7 @@ parameters:
   default_secret: "GznmUbujd!nj&@VyjujBkv8#@Lj"
 
   mongodb_server: "mongodb://p1-api-mongo:27017"
-  mongodb_database: "test_database"
+  mongodb_database: "p1admin"
 
   s3_bucket_name: "protocolone-test"
   s3_region: "eu-central-1"
