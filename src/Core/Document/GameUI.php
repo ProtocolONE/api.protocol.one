@@ -128,9 +128,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Game
+     * @return Game|null
      */
-    public function getGame(): Game
+    public function getGame(): ?Game
     {
         return $this->game;
     }
@@ -150,7 +150,7 @@ class GameUI extends BaseDocument
      */
     public function isSecondAllowed(): bool
     {
-        return $this->secondAllowed;
+        return (bool)$this->secondAllowed;
     }
 
     /**
@@ -168,7 +168,7 @@ class GameUI extends BaseDocument
      */
     public function isHasOverlay(): bool
     {
-        return $this->hasOverlay;
+        return (bool)$this->hasOverlay;
     }
 
     /**
@@ -186,7 +186,7 @@ class GameUI extends BaseDocument
      */
     public function getSortPriority(): int
     {
-        return $this->sortPriority;
+        return (int)$this->sortPriority;
     }
 
     /**
@@ -200,9 +200,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getImageSmall(): Media
+    public function getImageSmall(): ?Media
     {
         return $this->imageSmall;
     }
@@ -218,9 +218,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getImageHorizontalSmall(): Media
+    public function getImageHorizontalSmall(): ?Media
     {
         return $this->imageHorizontalSmall;
     }
@@ -236,9 +236,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getImageLogoSmall(): Media
+    public function getImageLogoSmall(): ?Media
     {
         return $this->imageLogoSmall;
     }
@@ -254,9 +254,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getImagePopupArt(): Media
+    public function getImagePopupArt(): ?Media
     {
         return $this->imagePopupArt;
     }
@@ -272,9 +272,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getBackgroundInApp(): Media
+    public function getBackgroundInApp(): ?Media
     {
         return $this->backgroundInApp;
     }
@@ -326,9 +326,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getWidgetList(): string
+    public function getWidgetList(): ?string
     {
         return $this->widgetList;
     }
@@ -344,9 +344,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getLogoText(): string
+    public function getLogoText(): ?string
     {
         return $this->logoText;
     }
@@ -362,9 +362,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getMiniToolTip(): string
+    public function getMiniToolTip(): ?string
     {
         return $this->miniToolTip;
     }
@@ -380,9 +380,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAboutGame(): string
+    public function getAboutGame(): ?string
     {
         return $this->aboutGame;
     }
@@ -398,9 +398,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getShortDescription(): string
+    public function getShortDescription(): ?string
     {
         return $this->shortDescription;
     }
@@ -422,7 +422,7 @@ class GameUI extends BaseDocument
      */
     public function getSecondAllowed(): bool
     {
-        return $this->secondAllowed;
+        return (bool)$this->secondAllowed;
     }
 
     /**
@@ -432,6 +432,6 @@ class GameUI extends BaseDocument
      */
     public function getHasOverlay(): bool
     {
-        return $this->hasOverlay;
+        return (bool)$this->hasOverlay;
     }
 }

@@ -40,7 +40,7 @@ class ExecutorHook extends BaseDocument
      */
     public function getPriority(): int
     {
-        return $this->priority;
+        return (int)$this->priority;
     }
 
     /**
@@ -54,9 +54,9 @@ class ExecutorHook extends BaseDocument
     }
 
     /**
-     * @return mixed
+     * @return ExecutorHookType|null
      */
-    public function getExecutorHooksRef()
+    public function getExecutorHooksRef(): ?ExecutorHookType
     {
         return $this->executorHooksRef;
     }

@@ -194,9 +194,9 @@ class Game extends BaseDocument
     /**
      * Get name
      *
-     * @return string $name
+     * @return string|null $name
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -205,9 +205,9 @@ class Game extends BaseDocument
     /**
      * Get shortcut
      *
-     * @return Shortcut $shortcut
+     * @return Shortcut|null $shortcut
      */
-    public function getShortcut(): Shortcut
+    public function getShortcut(): ?Shortcut
     {
         return $this->shortcut;
     }
@@ -227,9 +227,9 @@ class Game extends BaseDocument
     /**
      * Get alias
      *
-     * @return string $alias
+     * @return string|null $alias
      */
-    public function getAlias(): string
+    public function getAlias(): ?string
     {
         return $this->alias;
     }
@@ -249,9 +249,9 @@ class Game extends BaseDocument
     /**
      * Get developer
      *
-     * @return string $developer
+     * @return string|null $developer
      */
-    public function getDeveloper(): string
+    public function getDeveloper(): ?string
     {
         return $this->developer;
     }
@@ -271,9 +271,9 @@ class Game extends BaseDocument
     /**
      * Get publisher
      *
-     * @return string $publisher
+     * @return string|null $publisher
      */
-    public function getPublisher(): string
+    public function getPublisher(): ?string
     {
         return $this->publisher;
     }
@@ -293,9 +293,9 @@ class Game extends BaseDocument
     /**
      * Get releaseDate
      *
-     * @return \DateTime $releaseDate
+     * @return \DateTime|null $releaseDate
      */
-    public function getReleaseDate(): \DateTime
+    public function getReleaseDate(): ?\DateTime
     {
         return $this->releaseDate;
     }
@@ -315,9 +315,9 @@ class Game extends BaseDocument
     /**
      * Get obtStartDate
      *
-     * @return \DateTime $obtStartDate
+     * @return \DateTime|null $obtStartDate
      */
-    public function getObtStartDate(): \DateTime
+    public function getObtStartDate(): ?\DateTime
     {
         return $this->obtStartDate;
     }
@@ -337,9 +337,9 @@ class Game extends BaseDocument
     /**
      * Get officialSite
      *
-     * @return string $officialSite
+     * @return string|null $officialSite
      */
-    public function getOfficialSite(): string
+    public function getOfficialSite(): ?string
     {
         return $this->officialSite;
     }
@@ -359,9 +359,9 @@ class Game extends BaseDocument
     /**
      * Get forumUrl
      *
-     * @return string $forumUrl
+     * @return string|null $forumUrl
      */
-    public function getForumUrl(): string
+    public function getForumUrl(): ?string
     {
         return $this->forumUrl;
     }
@@ -381,9 +381,9 @@ class Game extends BaseDocument
     /**
      * Get wikiUrl
      *
-     * @return string $wikiUrl
+     * @return string|null $wikiUrl
      */
-    public function getWikiUrl(): string
+    public function getWikiUrl(): ?string
     {
         return $this->wikiUrl;
     }
@@ -403,9 +403,9 @@ class Game extends BaseDocument
     /**
      * Get supportUrl
      *
-     * @return string $supportUrl
+     * @return string|null $supportUrl
      */
-    public function getSupportUrl(): string
+    public function getSupportUrl(): ?string
     {
         return $this->supportUrl;
     }
@@ -425,9 +425,9 @@ class Game extends BaseDocument
     /**
      * Get description
      *
-     * @return string $description
+     * @return string|null $description
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
@@ -447,17 +447,17 @@ class Game extends BaseDocument
     /**
      * Get textForCatalog
      *
-     * @return string $textForCatalog
+     * @return string|null $textForCatalog
      */
-    public function getTextForCatalog(): string
+    public function getTextForCatalog(): ?string
     {
         return $this->textForCatalog;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getFacebookGroupUrl(): string
+    public function getFacebookGroupUrl(): ?string
     {
         return $this->facebookGroupUrl;
     }
@@ -473,9 +473,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getTwitterGroupUrl(): string
+    public function getTwitterGroupUrl(): ?string
     {
         return $this->twitterGroupUrl;
     }
@@ -491,9 +491,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getYouTubeGroupUrl(): string
+    public function getYouTubeGroupUrl(): ?string
     {
         return $this->youTubeGroupUrl;
     }
@@ -509,9 +509,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getGooglePlusGroupUrl(): string
+    public function getGooglePlusGroupUrl(): ?string
     {
         return $this->googlePlusGroupUrl;
     }
@@ -527,9 +527,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getVkGroupUrl(): string
+    public function getVkGroupUrl(): ?string
     {
         return $this->vkGroupUrl;
     }
@@ -545,9 +545,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOdnoklassnikiGroupUrl(): string
+    public function getOdnoklassnikiGroupUrl(): ?string
     {
         return $this->odnoklassnikiGroupUrl;
     }
@@ -563,9 +563,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getMoimirGroupUrl(): string
+    public function getMoimirGroupUrl(): ?string
     {
         return $this->moimirGroupUrl;
     }
@@ -581,9 +581,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getClientDownloadUrl(): string
+    public function getClientDownloadUrl(): ?string
     {
         return $this->clientDownloadUrl;
     }
@@ -599,9 +599,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getIcon48x48(): Media
+    public function getIcon48x48(): ?Media
     {
         return $this->icon48x48;
     }
@@ -617,9 +617,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getAvatar100x100(): Media
+    public function getAvatar100x100(): ?Media
     {
         return $this->avatar100x100;
     }
@@ -635,9 +635,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getAvatar300x200(): Media
+    public function getAvatar300x200(): ?Media
     {
         return $this->avatar300x200;
     }
@@ -653,9 +653,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getAvatar180x200(): Media
+    public function getAvatar180x200(): ?Media
     {
         return $this->avatar180x200;
     }
@@ -671,9 +671,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getIconInApp(): Media
+    public function getIconInApp(): ?Media
     {
         return $this->iconInApp;
     }
@@ -715,15 +715,15 @@ class Game extends BaseDocument
     /**
      * Get genre
      *
-     * @return Genre $genre
+     * @return Genre|null $genre
      */
-    public function getGenre(): Genre
+    public function getGenre(): ?Genre
     {
         return $this->genre;
     }
 
     public function __toString()
     {
-        return $this->getName();
+        return (string)$this->getName();
     }
 }

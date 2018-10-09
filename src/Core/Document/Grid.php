@@ -40,6 +40,7 @@ class Grid extends BaseDocument
     public function __construct()
     {
         $this->gridItems = [];
+        $this->createdAt = new \DateTime();
     }
 
     /**
@@ -65,7 +66,7 @@ class Grid extends BaseDocument
      */
     public function isActive(): bool
     {
-        return $this->isActive;
+        return (bool)$this->isActive;
     }
 
     /**
@@ -79,9 +80,9 @@ class Grid extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }

@@ -69,9 +69,9 @@ class GridItem extends BaseDocument
     }
 
     /**
-     * @return Game
+     * @return Game|null
      */
-    public function getGame(): Game
+    public function getGame(): ?Game
     {
         return $this->game;
     }
@@ -87,9 +87,9 @@ class GridItem extends BaseDocument
     }
 
     /**
-     * @return Media
+     * @return Media|null
      */
-    public function getImage(): Media
+    public function getImage(): ?Media
     {
         return $this->image;
     }
@@ -109,7 +109,7 @@ class GridItem extends BaseDocument
      */
     public function getRow(): int
     {
-        return $this->row;
+        return (int)$this->row;
     }
 
     /**
@@ -127,7 +127,7 @@ class GridItem extends BaseDocument
      */
     public function getCol(): int
     {
-        return $this->col;
+        return (int)$this->col;
     }
 
     /**
@@ -145,7 +145,7 @@ class GridItem extends BaseDocument
      */
     public function getWidth(): int
     {
-        return $this->width;
+        return (int)$this->width;
     }
 
     /**
@@ -163,7 +163,7 @@ class GridItem extends BaseDocument
      */
     public function getHeight(): int
     {
-        return $this->height;
+        return (int)$this->height;
     }
 
     /**

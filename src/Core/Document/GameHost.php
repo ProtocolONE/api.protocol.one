@@ -81,6 +81,8 @@ class GameHost extends BaseDocument
     {
         $this->hasDownloadPath = false;
         $this->isThettaUnbind = false;
+        $this->executorHooks = [];
+        $this->downloadHooks = [];
     }
 
     /**
@@ -94,9 +96,9 @@ class GameHost extends BaseDocument
     }
 
     /**
-     * @return Game
+     * @return Game|null
      */
-    public function getGame(): Game
+    public function getGame(): ?Game
     {
         return $this->game;
     }
@@ -116,7 +118,7 @@ class GameHost extends BaseDocument
      */
     public function isHasDownloadPath(): bool
     {
-        return $this->hasDownloadPath;
+        return (bool)$this->hasDownloadPath;
     }
 
     /**
@@ -130,9 +132,9 @@ class GameHost extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDownloadTorrentDirectUrl(): string
+    public function getDownloadTorrentDirectUrl(): ?string
     {
         return $this->downloadTorrentDirectUrl;
     }
@@ -148,9 +150,9 @@ class GameHost extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getFolderName(): string
+    public function getFolderName(): ?string
     {
         return $this->folderName;
     }
@@ -166,9 +168,9 @@ class GameHost extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getGameSize(): string
+    public function getGameSize(): ?string
     {
         return $this->gameSize;
     }
@@ -184,9 +186,9 @@ class GameHost extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDependencyList(): string
+    public function getDependencyList(): ?string
     {
         return $this->dependencyList;
     }
@@ -202,9 +204,9 @@ class GameHost extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getExtractorType(): string
+    public function getExtractorType(): ?string
     {
         return $this->extractorType;
     }
@@ -220,9 +222,9 @@ class GameHost extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getExecuteUrl(): string
+    public function getExecuteUrl(): ?string
     {
         return $this->executeUrl;
     }
@@ -298,7 +300,7 @@ class GameHost extends BaseDocument
      */
     public function getHasDownloadPath(): bool
     {
-        return $this->hasDownloadPath;
+        return (bool)$this->hasDownloadPath;
     }
 
     /**
@@ -308,6 +310,6 @@ class GameHost extends BaseDocument
      */
     public function getIsThettaUnbind(): bool
     {
-        return $this->isThettaUnbind;
+        return (bool)$this->isThettaUnbind;
     }
 }

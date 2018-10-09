@@ -42,11 +42,11 @@ class DownloadHook extends BaseDocument
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getPriorityBefore()
+    public function getPriorityBefore(): int
     {
-        return $this->priorityBefore;
+        return (int)$this->priorityBefore;
     }
 
     /**
@@ -60,11 +60,11 @@ class DownloadHook extends BaseDocument
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getPriorityAfter()
+    public function getPriorityAfter(): int
     {
-        return $this->priorityAfter;
+        return (int)$this->priorityAfter;
     }
 
     /**
@@ -78,9 +78,9 @@ class DownloadHook extends BaseDocument
     }
 
     /**
-     * @return DownloadHookType
+     * @return DownloadHookType|null
      */
-    public function getDownloadHooksRef(): DownloadHookType
+    public function getDownloadHooksRef(): ?DownloadHookType
     {
         return $this->downloadHooksRef;
     }

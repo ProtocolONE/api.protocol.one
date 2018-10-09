@@ -36,9 +36,9 @@ class ExecutorHookType extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -54,9 +54,9 @@ class ExecutorHookType extends BaseDocument
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->value;
     }
@@ -73,6 +73,6 @@ class ExecutorHookType extends BaseDocument
 
     public function __toString()
     {
-        return $this->getName();
+        return (string)$this->getName();
     }
 }
