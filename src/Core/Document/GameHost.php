@@ -1,6 +1,8 @@
 <?php namespace Core\Document;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Doctrine\ODM\MongoDB\PersistentCollection;
 
 /**
  * @MongoDB\Document
@@ -81,8 +83,6 @@ class GameHost extends BaseDocument
     {
         $this->hasDownloadPath = false;
         $this->isThettaUnbind = false;
-        $this->executorHooks = [];
-        $this->downloadHooks = [];
     }
 
     /**
@@ -258,36 +258,36 @@ class GameHost extends BaseDocument
     }
 
     /**
-     * @return array
+     * @return PersistentCollection|null
      */
-    public function getDownloadHooks(): array
+    public function getDownloadHooks(): ?PersistentCollection
     {
         return $this->downloadHooks;
     }
 
     /**
-     * @param DownloadHook[] $downloadHook
+     * @param ArrayCollection $downloadHook
      * @return GameHost
      */
-    public function setDownloadHooks($downloadHook): GameHost
+    public function setDownloadHooks(ArrayCollection $downloadHook): GameHost
     {
         $this->downloadHooks = $downloadHook;
         return $this;
     }
 
     /**
-     * @return ExecutorHook[]|null
+     * @return PersistentCollection|null
      */
-    public function getExecutorHooks(): array
+    public function getExecutorHooks(): ?PersistentCollection
     {
         return $this->executorHooks;
     }
 
     /**
-     * @param ExecutorHook[]|null $executorHooks
+     * @param ArrayCollection|null $executorHooks
      * @return GameHost
      */
-    public function setExecutorHooks(array $executorHooks): GameHost
+    public function setExecutorHooks(ArrayCollection $executorHooks): GameHost
     {
         $this->executorHooks = $executorHooks;
         return $this;
