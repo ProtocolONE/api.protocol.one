@@ -5,10 +5,10 @@ parameters:
   mongodb_server: "mongodb://p1-api-mongo:27017"
   mongodb_database: "p1admin"
 
-  s3_bucket_name: "protocolone-test"
-  s3_region: "eu-central-1"
-  s3_access_key: "AKIAJ3TW7PNS67SG4SUA"
-  s3_secret_key: "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"
+  s3_bucket_name: ""
+  s3_region: ""
+  s3_access_key: ""
+  s3_secret_key: ""
   s3_version: "latest"
   s3_sdk_version: 3
 
