@@ -260,7 +260,7 @@ class GameHost extends BaseDocument
     /**
      * @return PersistentCollection|null
      */
-    public function getDownloadHooks(): ?PersistentCollection
+    public function getDownloadHooks()
     {
         return $this->downloadHooks;
     }
@@ -269,7 +269,7 @@ class GameHost extends BaseDocument
      * @param ArrayCollection $downloadHook
      * @return GameHost
      */
-    public function setDownloadHooks(ArrayCollection $downloadHook): GameHost
+    public function setDownloadHooks($downloadHook): GameHost
     {
         $this->downloadHooks = $downloadHook;
         return $this;
@@ -287,7 +287,7 @@ class GameHost extends BaseDocument
      * @param ArrayCollection|null $executorHooks
      * @return GameHost
      */
-    public function setExecutorHooks(ArrayCollection $executorHooks): GameHost
+    public function setExecutorHooks($executorHooks): GameHost
     {
         $this->executorHooks = $executorHooks;
         return $this;

@@ -4,8 +4,11 @@ services:
         build: .
         container_name: p1-api-php
         restart: always
+        env_file:
+          - ./etc/.env
         networks: 
           - p1devnet
+
     p1-api-nginx:
         container_name: p1-api-nginx
         image: nginx:1.15.4

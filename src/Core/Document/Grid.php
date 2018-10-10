@@ -118,7 +118,7 @@ class Grid extends BaseDocument
     /**
      * @return GridItem[]
      */
-    public function getGridItems(): array
+    public function getGridItems()
     {
         return $this->gridItems;
     }
