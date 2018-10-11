@@ -13,3 +13,8 @@ The MIT License (MIT)
 
 For the whole copyright, see the [LICENSE](LICENSE) file distributed with this 
 source code.
+
+Configs
+-------
+
+If you want to customize the project settings, copy ./etc/.env.example to ./etc/.env and set appropriate values.
