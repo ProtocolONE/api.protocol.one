@@ -17,9 +17,11 @@ source code.
 Usage
 -----
 Create .env file with environment variables for containers:
-  copy ./etc/.env.example ./etc/.env
+
+    copy ./etc/.env.example ./etc/.env
 
 Run 
-  docker-compuse up --build
+
+    docker-compuse up --build
 
 You can override default parameters using the ./etc/.env file.
