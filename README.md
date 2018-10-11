@@ -14,7 +14,12 @@ The MIT License (MIT)
 For the whole copyright, see the [LICENSE](LICENSE) file distributed with this 
 source code.
 
-Configs
--------
+Usage
+-----
+Create .env file with environment variables for containers:
+  copy ./etc/.env.example ./etc/.env
 
-If you want to customize the project settings, copy ./etc/.env.example to ./etc/.env and set appropriate values.
+Run 
+  docker-compuse up --build
+
+You can override default parameters using the ./etc/.env file.
