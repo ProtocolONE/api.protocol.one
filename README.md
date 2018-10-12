@@ -24,4 +24,4 @@ Run
 
     docker-compuse up --build
 
-You can override default parameters using the ./etc/.env file.
+You can override default values of parameters using the ./etc/.env file.
