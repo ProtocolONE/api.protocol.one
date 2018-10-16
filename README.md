@@ -22,6 +22,6 @@ Create .env file with environment variables for containers:
 
 Run 
 
-    docker-compuse up --build
+    docker-compose up --build
 
 You can override default values of parameters using the ./etc/.env file.
