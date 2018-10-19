@@ -87,6 +87,8 @@ class ImageReplacer
             } else if ($value instanceof PersistentCollection) {
                 /** @var PersistentCollection $value */
                 $value = $this->prepareList($this->prepareList($value->toArray()));
+            } else if ($value instanceof BaseDocument) {
+                $value = $this->prepareObject($value);
             }
 
             $object->$setter($value);

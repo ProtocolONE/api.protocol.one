@@ -87,9 +87,9 @@ class GridItem extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getImage(): ?Media
+    public function getImage()
     {
         return $this->image;
     }

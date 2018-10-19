@@ -27,12 +27,6 @@ class GameUI extends BaseDocument
     protected $secondAllowed;
 
     /**
-     * @var boolean
-     * @MongoDB\Field(type="boolean")
-     */
-    protected $hasOverlay;
-
-    /**
      * @var integer
      * @MongoDB\Field(type="int")
      */
@@ -114,7 +108,6 @@ class GameUI extends BaseDocument
     {
         $this->sortPriority = 0;
         $this->secondAllowed = false;
-        $this->hasOverlay = false;
     }
 
     /**
@@ -164,24 +157,6 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return bool
-     */
-    public function isHasOverlay(): bool
-    {
-        return (bool)$this->hasOverlay;
-    }
-
-    /**
-     * @param bool $hasOverlay
-     * @return GameUI
-     */
-    public function setHasOverlay($hasOverlay): GameUI
-    {
-        $this->hasOverlay = $hasOverlay;
-        return $this;
-    }
-
-    /**
      * @return int
      */
     public function getSortPriority(): int
@@ -200,9 +175,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getImageSmall(): ?Media
+    public function getImageSmall()
     {
         return $this->imageSmall;
     }
@@ -218,9 +193,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getImageHorizontalSmall(): ?Media
+    public function getImageHorizontalSmall()
     {
         return $this->imageHorizontalSmall;
     }
@@ -236,9 +211,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getImageLogoSmall(): ?Media
+    public function getImageLogoSmall()
     {
         return $this->imageLogoSmall;
     }
@@ -254,9 +229,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getImagePopupArt(): ?Media
+    public function getImagePopupArt()
     {
         return $this->imagePopupArt;
     }
@@ -272,9 +247,9 @@ class GameUI extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getBackgroundInApp(): ?Media
+    public function getBackgroundInApp()
     {
         return $this->backgroundInApp;
     }
@@ -423,15 +398,5 @@ class GameUI extends BaseDocument
     public function getSecondAllowed(): bool
     {
         return (bool)$this->secondAllowed;
-    }
-
-    /**
-     * Get hasOverlay
-     *
-     * @return boolean $hasOverlay
-     */
-    public function getHasOverlay(): bool
-    {
-        return (bool)$this->hasOverlay;
     }
 }

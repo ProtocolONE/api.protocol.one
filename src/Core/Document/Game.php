@@ -170,6 +170,18 @@ class Game extends BaseDocument
     public $shortcut;
 
     /**
+     * @var boolean
+     * @MongoDB\Field(type="boolean")
+     */
+    public $isPublishedInApp;
+
+    /**
+     * @var boolean
+     * @MongoDB\Field(type="boolean")
+     */
+    public $isRunnable;
+
+    /**
      * Get id
      *
      * @return string $id
@@ -599,9 +611,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getIcon48x48(): ?Media
+    public function getIcon48x48()
     {
         return $this->icon48x48;
     }
@@ -617,9 +629,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getAvatar100x100(): ?Media
+    public function getAvatar100x100()
     {
         return $this->avatar100x100;
     }
@@ -635,9 +647,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getAvatar300x200(): ?Media
+    public function getAvatar300x200()
     {
         return $this->avatar300x200;
     }
@@ -653,9 +665,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getAvatar180x200(): ?Media
+    public function getAvatar180x200()
     {
         return $this->avatar180x200;
     }
@@ -671,9 +683,9 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return Media|null
+     * @return Media|string|null
      */
-    public function getIconInApp(): ?Media
+    public function getIconInApp()
     {
         return $this->iconInApp;
     }
@@ -720,6 +732,42 @@ class Game extends BaseDocument
     public function getGenre(): ?Genre
     {
         return $this->genre;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPublishedInApp(): bool
+    {
+        return $this->isPublishedInApp;
+    }
+
+    /**
+     * @param bool $isPublishedInApp
+     * @return Game
+     */
+    public function setIsPublishedInApp(bool $isPublishedInApp): Game
+    {
+        $this->isPublishedInApp = $isPublishedInApp;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isRunnable(): bool
+    {
+        return $this->isRunnable;
+    }
+
+    /**
+     * @param bool $isRunnable
+     * @return Game
+     */
+    public function setIsRunnable(bool $isRunnable): Game
+    {
+        $this->isRunnable = $isRunnable;
+        return $this;
     }
 
     public function __toString()
