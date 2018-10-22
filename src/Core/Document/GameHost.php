@@ -276,9 +276,9 @@ class GameHost extends BaseDocument
     }
 
     /**
-     * @return PersistentCollection|null
+     * @return mixed
      */
-    public function getExecutorHooks(): ?PersistentCollection
+    public function getExecutorHooks()
     {
         return $this->executorHooks;
     }

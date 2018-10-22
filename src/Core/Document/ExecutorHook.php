@@ -54,9 +54,9 @@ class ExecutorHook extends BaseDocument
     }
 
     /**
-     * @return ExecutorHookType|null
+     * @return mixed
      */
-    public function getExecutorHooksRef(): ?ExecutorHookType
+    public function getExecutorHooksRef()
     {
         return $this->executorHooksRef;
     }

@@ -78,9 +78,9 @@ class DownloadHook extends BaseDocument
     }
 
     /**
-     * @return DownloadHookType|null
+     * @return mixed
      */
-    public function getDownloadHooksRef(): ?DownloadHookType
+    public function getDownloadHooksRef()
     {
         return $this->downloadHooksRef;
     }
