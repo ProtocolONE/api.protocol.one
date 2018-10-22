@@ -3,6 +3,10 @@ services:
     class: Core\Manager\GamesManager
     arguments: ["@doctrine_mongodb", "@document.helper.image_replacer"]
 
+  manager.theme:
+    class: Core\Manager\ThemeManager
+    arguments: ["@doctrine_mongodb", "@document.helper.image_replacer"]
+
   document.helper.image_replacer:
     class: Core\Helper\ImageReplacer
     arguments: ["@sonata.media.twig.extension"]
