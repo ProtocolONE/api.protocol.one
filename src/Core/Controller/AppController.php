@@ -2,7 +2,7 @@
 
 namespace Core\Controller;
 
-use Core\Manager\GamesManager;
+use Core\Manager\AppManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -31,8 +31,8 @@ class AppController extends Controller
      */
     public function uiAction(Request $request): Response
     {
-        /** @var GamesManager $manager */
-        $manager = $this->container->get('manager.games');
+        /** @var AppManager $manager */
+        $manager = $this->container->get('manager.app');
         $gameId = $request->query->get('gameId');
 
         return new JsonResponse($manager->getUI($gameId));
@@ -46,8 +46,8 @@ class AppController extends Controller
      */
     public function hostsAction(Request $request): Response
     {
-        /** @var GamesManager $manager */
-        $manager = $this->container->get('manager.games');
+        /** @var AppManager $manager */
+        $manager = $this->container->get('manager.app');
         $gameId = $request->query->get('gameId');
 
         return new JsonResponse($manager->getHosts($gameId));
@@ -61,8 +61,8 @@ class AppController extends Controller
      */
     public function gridAction(): Response
     {
-        /** @var GamesManager $manager */
-        $manager = $this->container->get('manager.games');
+        /** @var AppManager $manager */
+        $manager = $this->container->get('manager.app');
 
         return new JsonResponse($manager->getGrid());
     }

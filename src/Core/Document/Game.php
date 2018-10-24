@@ -87,46 +87,9 @@ class Game extends BaseDocument
     protected $textForCatalog;
 
     /**
-     * @var string
-     * @MongoDB\Field(type="string")
+     * @MongoDB\ReferenceMany(targetDocument="SocialGroup")
      */
-    protected $facebookGroupUrl;
-
-    /**
-     * @var string
-     * @MongoDB\Field(type="string")
-     */
-    protected $twitterGroupUrl;
-
-    /**
-     * @var string
-     * @MongoDB\Field(type="string")
-     */
-    protected $youTubeGroupUrl;
-
-    /**
-     * @var string
-     * @MongoDB\Field(type="string")
-     */
-    protected $googlePlusGroupUrl;
-
-    /**
-     * @var string
-     * @MongoDB\Field(type="string")
-     */
-    protected $vkGroupUrl;
-
-    /**
-     * @var string
-     * @MongoDB\Field(type="string")
-     */
-    protected $odnoklassnikiGroupUrl;
-
-    /**
-     * @var string
-     * @MongoDB\Field(type="string")
-     */
-    protected $moimirGroupUrl;
+    protected $socialGroups;
 
     /**
      * @var string
@@ -473,128 +436,20 @@ class Game extends BaseDocument
     }
 
     /**
-     * @return string|null
+     * @return mixed
      */
-    public function getFacebookGroupUrl(): ?string
+    public function getSocialGroups()
     {
-        return $this->facebookGroupUrl;
+        return $this->socialGroups;
     }
 
     /**
-     * @param string $facebookGroupUrl
+     * @param mixed $socialGroups
      * @return Game
      */
-    public function setFacebookGroupUrl($facebookGroupUrl): Game
+    public function setSocialGroups($socialGroups): Game
     {
-        $this->facebookGroupUrl = $facebookGroupUrl;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getTwitterGroupUrl(): ?string
-    {
-        return $this->twitterGroupUrl;
-    }
-
-    /**
-     * @param string $twitterGroupUrl
-     * @return Game
-     */
-    public function setTwitterGroupUrl($twitterGroupUrl): Game
-    {
-        $this->twitterGroupUrl = $twitterGroupUrl;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getYouTubeGroupUrl(): ?string
-    {
-        return $this->youTubeGroupUrl;
-    }
-
-    /**
-     * @param string $youTubeGroupUrl
-     * @return Game
-     */
-    public function setYouTubeGroupUrl($youTubeGroupUrl): Game
-    {
-        $this->youTubeGroupUrl = $youTubeGroupUrl;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getGooglePlusGroupUrl(): ?string
-    {
-        return $this->googlePlusGroupUrl;
-    }
-
-    /**
-     * @param string $googlePlusGroupUrl
-     * @return Game
-     */
-    public function setGooglePlusGroupUrl($googlePlusGroupUrl): Game
-    {
-        $this->googlePlusGroupUrl = $googlePlusGroupUrl;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getVkGroupUrl(): ?string
-    {
-        return $this->vkGroupUrl;
-    }
-
-    /**
-     * @param string $vkGroupUrl
-     * @return Game
-     */
-    public function setVkGroupUrl($vkGroupUrl): Game
-    {
-        $this->vkGroupUrl = $vkGroupUrl;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getOdnoklassnikiGroupUrl(): ?string
-    {
-        return $this->odnoklassnikiGroupUrl;
-    }
-
-    /**
-     * @param string $odnoklassnikiGroupUrl
-     * @return Game
-     */
-    public function setOdnoklassnikiGroupUrl($odnoklassnikiGroupUrl): Game
-    {
-        $this->odnoklassnikiGroupUrl = $odnoklassnikiGroupUrl;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getMoimirGroupUrl(): ?string
-    {
-        return $this->moimirGroupUrl;
-    }
-
-    /**
-     * @param string $moimirGroupUrl
-     * @return Game
-     */
-    public function setMoimirGroupUrl($moimirGroupUrl): Game
-    {
-        $this->moimirGroupUrl = $moimirGroupUrl;
+        $this->socialGroups = $socialGroups;
         return $this;
     }
 

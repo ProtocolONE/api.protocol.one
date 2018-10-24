@@ -1,10 +1,14 @@
 services:
-  manager.games:
-    class: Core\Manager\GamesManager
+  manager.app:
+    class: Core\Manager\AppManager
     arguments: ["@doctrine_mongodb", "@document.helper.image_replacer"]
 
   manager.theme:
     class: Core\Manager\ThemeManager
+    arguments: ["@doctrine_mongodb", "@document.helper.image_replacer"]
+
+  manager.games:
+    class: Core\Manager\GamesManager
     arguments: ["@doctrine_mongodb", "@document.helper.image_replacer"]
 
   document.helper.image_replacer:
