@@ -34,4 +34,17 @@ class GamesController extends Controller
 
         return new JsonResponse($manager->getMaintenance());
     }
+
+    /**
+     * @Route("/news/", name="games.news", methods={"GET"})
+     *
+     * @return Response
+     */
+    public function newsAction(): Response
+    {
+        /** @var GamesManager $manager */
+        $manager = $this->container->get('manager.games');
+
+        return new JsonResponse($manager->getNews());
+    }
 }

@@ -33,6 +33,10 @@ abstract class BaseDocument implements \JsonSerializable
                 }
                 $attributes[$propName] = $values;
             } else {
+                if ($value instanceof \DateTime) {
+                    $value = $value->format(\DATE_ATOM);
+                }
+
                 $attributes[$propName] = $value;
             }
         }

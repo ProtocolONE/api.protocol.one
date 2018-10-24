@@ -1,9 +1,9 @@
 <?php namespace Core\Manager;
 
-use Core\Document\BaseDocument;
-use Core\Document\Maintenance;
 use Doctrine\Bundle\MongoDBBundle\ManagerRegistry;
 use Core\Helper\ImageReplacer;
+use Core\Document\Maintenance;
+use Core\Document\News;
 
 class GamesManager
 {
@@ -26,6 +26,13 @@ class GamesManager
     {
         $maintenance = $this->mongoManager->getRepository(Maintenance::class);
 
-        return $maintenance->findAll();
+        return $this->imageReplacer->prepareList($maintenance->findAll());
+    }
+
+    public function getNews(): array
+    {
+        $news = $this->mongoManager->getRepository(News::class);
+
+        return $this->imageReplacer->prepareList($news->findAll());
     }
 }
