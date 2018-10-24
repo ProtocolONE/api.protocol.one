@@ -33,6 +33,24 @@ class Theme extends BaseDocument
     protected $file;
 
     /**
+     * @var int
+     * @MongoDB\Field(type="integer")
+     */
+    protected $size;
+
+    /**
+     * @var \DateTime
+     * @MongoDB\Field(type="date")
+     */
+    protected $createDate;
+
+    /**
+     * @var \DateTime
+     * @MongoDB\Field(type="date")
+     */
+    protected $updateDate;
+
+    /**
      * @return string
      */
     public function getId(): string
@@ -101,6 +119,60 @@ class Theme extends BaseDocument
     public function setFile($file): Theme
     {
         $this->file = $file;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSize(): int
+    {
+        return $this->size;
+    }
+
+    /**
+     * @param int $size
+     * @return Theme
+     */
+    public function setSize(int $size): Theme
+    {
+        $this->size = $size;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreateDate(): ?\DateTime
+    {
+        return $this->createDate;
+    }
+
+    /**
+     * @param \DateTime $createDate
+     * @return Theme
+     */
+    public function setCreateDate(\DateTime $createDate): Theme
+    {
+        $this->createDate = $createDate;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdateDate(): ?\DateTime
+    {
+        return $this->updateDate;
+    }
+
+    /**
+     * @param \DateTime $updateDate
+     * @return Theme
+     */
+    public function setUpdateDate(\DateTime $updateDate): Theme
+    {
+        $this->updateDate = $updateDate;
         return $this;
     }
 

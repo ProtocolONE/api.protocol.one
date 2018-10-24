@@ -3,6 +3,7 @@
 use Core\Document\BaseDocument;
 use Application\Sonata\MediaBundle\Document\Media;
 use Sonata\MediaBundle\Twig\Extension\MediaExtension;
+use Sonata\MediaBundle\Provider\MediaProviderInterface;
 use Doctrine\ODM\MongoDB\PersistentCollection;
 
 /**
@@ -18,6 +19,7 @@ class ImageReplacer
 {
     public const SIZE_SMALL = 'small';
     public const SIZE_BIG = 'big';
+    public const SIZE_REFERENCE = MediaProviderInterface::FORMAT_REFERENCE;
 
     private $size;
 
@@ -29,7 +31,7 @@ class ImageReplacer
     public function __construct(MediaExtension $mediaExtension)
     {
         $this->mediaExtension = $mediaExtension;
-        $this->size = self::SIZE_BIG;
+        $this->size = self::SIZE_REFERENCE;
     }
 
     /**
