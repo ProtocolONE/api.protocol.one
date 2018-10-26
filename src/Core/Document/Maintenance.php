@@ -172,7 +172,7 @@ class Maintenance extends BaseDocument
     /**
      * @return bool
      */
-    public function isSticky(): bool
+    public function getIsSticky(): bool
     {
         return (bool)$this->isSticky;
     }
