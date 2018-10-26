@@ -19,8 +19,7 @@ jobs:
     - docker build -t $REPO:$TAG -t $REPO:0.0.$TRAVIS_BUILD_NUMBER .
     - docker push $REPO
 after_success:
-- curl -X POST $JURL/job/deploy-p1api/build --user $JENKINS_LOGIN:$TOKEN --data-urlencode
-  json='\{"parameter":\ [\{"name":"CHART_NAME", "value":"p1api"\}\]\}'
+- curl -X POST $JURL/job/deploy-p1api/build --user $JENKINS_LOGIN:$TOKEN --data-urlencode json='{parameter:[{name:"CHART_NAME", value:"p1api"}]}'
 notifications:
   email: false
   slack:
