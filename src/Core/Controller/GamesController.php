@@ -47,4 +47,45 @@ class GamesController extends Controller
 
         return new JsonResponse($manager->getNews());
     }
+
+    /**
+     * @Route("/gallery/{gameId}/", name="games.gallery", requirements={"gameId"="[A-z0-9]{24}"}, methods={"GET"})
+     *
+     * @param string $gameId
+     * @return Response
+     */
+    public function galleryAction(string $gameId): Response
+    {
+        /** @var GamesManager $manager */
+        $manager = $this->container->get('manager.games');
+
+        return new JsonResponse($manager->getGallery($gameId));
+    }
+
+    /**
+     * @Route("/banners/{gameId}/", name="games.banners", requirements={"gameId"="[A-z0-9]{24}"}, methods={"GET"})
+     *
+     * @param string $gameId
+     * @return Response
+     */
+    public function bannersAction(string $gameId): Response
+    {
+        /** @var GamesManager $manager */
+        $manager = $this->container->get('manager.games');
+
+        return new JsonResponse($manager->getBanners($gameId));
+    }
+
+    /**
+     * @Route("/announcement/", name="games.announcement", methods={"GET"})
+     *
+     * @return Response
+     */
+    public function announcementAction(): Response
+    {
+        /** @var GamesManager $manager */
+        $manager = $this->container->get('manager.games');
+
+        return new JsonResponse($manager->getAnnouncement());
+    }
 }
