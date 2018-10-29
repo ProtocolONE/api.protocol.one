@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class GamesController
@@ -51,13 +52,14 @@ class GamesController extends Controller
     /**
      * @Route("/gallery/", name="games.gallery", methods={"GET"})
      *
+     * @param Request $request
      * @return Response
      */
-    public function galleryAction(): Response
+    public function galleryAction(Request $request): Response
     {
         /** @var GamesManager $manager */
         $manager = $this->container->get('manager.games');
-        $gameId = $this->container->get('gameId');
+        $gameId = $request->get('gameId');
 
         return new JsonResponse($manager->getGallery($gameId));
     }
@@ -65,13 +67,14 @@ class GamesController extends Controller
     /**
      * @Route("/banners/", name="games.banners", methods={"GET"})
      *
+     * @param Request $request
      * @return Response
      */
-    public function bannersAction(): Response
+    public function bannersAction(Request $request): Response
     {
         /** @var GamesManager $manager */
         $manager = $this->container->get('manager.games');
-        $gameId = $this->container->get('gameId');
+        $gameId = $request->get('gameId');
 
         return new JsonResponse($manager->getBanners($gameId));
     }
