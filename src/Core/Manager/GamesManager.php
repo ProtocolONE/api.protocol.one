@@ -43,6 +43,10 @@ class GamesManager
 
     public function getGallery(string $gameId): array
     {
+        if (false === $this->validateGameId($gameId)) {
+            return [];
+        }
+
         $news = $this->mongoManager->getRepository(Gallery::class);
 
         return $this->imageReplacer->prepareList($news->findBy(['game.id' => $gameId]));
@@ -50,6 +54,10 @@ class GamesManager
 
     public function getBanners(string $gameId): array
     {
+        if (false === $this->validateGameId($gameId)) {
+            return [];
+        }
+
         $news = $this->mongoManager->getRepository(Banner::class);
 
         return $this->imageReplacer->prepareList($news->findBy(['game.id' => $gameId]));
@@ -69,5 +77,10 @@ class GamesManager
         $cursor = $qb->getQuery()->execute();
 
         return $this->imageReplacer->prepareList($cursor->toArray());
+    }
+
+    private function validateGameId($gameId)
+    {
+        return (boolean) preg_match('/([A-z0-9]{24})/i', $gameId);
     }
 }
