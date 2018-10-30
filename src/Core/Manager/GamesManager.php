@@ -76,7 +76,7 @@ class GamesManager
             ->gte(new \DateTime());
         $cursor = $qb->getQuery()->execute();
 
-        return $this->imageReplacer->prepareList($cursor->toArray());
+        return $this->imageReplacer->prepareList($cursor->toArray(false));
     }
 
     private function validateGameId($gameId)
