@@ -73,7 +73,9 @@ class GamesManager
             ->getManager()
             ->createQueryBuilder(Announcement::class)
             ->field('endTime')
-            ->gte(new \DateTime());
+            ->gte(new \DateTime())
+            ->field('startTime')
+            ->lte(new \DateTime());
         $cursor = $qb->getQuery()->execute();
 
         return $this->imageReplacer->prepareList($cursor->toArray(false));
